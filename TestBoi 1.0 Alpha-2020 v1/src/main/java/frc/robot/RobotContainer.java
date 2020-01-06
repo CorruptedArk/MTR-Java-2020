@@ -9,7 +9,6 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
-import frc.robot.commands.AutonCommand;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.TeleOpCommand;
 import frc.robot.subsystems.DriveSubsystem;
@@ -28,8 +27,8 @@ public class RobotContainer {
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   private final TeleOpCommand m_teleOpCommand = new TeleOpCommand();
-  private final DriveSubsystem m_driveSubsystem = new DriveSubsystem();
-  private final AutonCommand m_autonCommand = new AutonCommand();
+  public final static DriveSubsystem m_driveSubsystem = new DriveSubsystem();
+  
 
 
 

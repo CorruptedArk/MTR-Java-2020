@@ -9,6 +9,8 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.RobotContainer;
+
 
 public class TeleOpCommand extends CommandBase {
   /**
@@ -16,6 +18,7 @@ public class TeleOpCommand extends CommandBase {
    */
   public TeleOpCommand() {
     // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(RobotContainer.m_driveSubsystem);
   }
 
   // Called when the command is initially scheduled.

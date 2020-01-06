@@ -24,14 +24,15 @@ public class DriveSubsystem extends SubsystemBase {
    * Creates a new DriveSubsystem.
    */
   public DriveSubsystem() {
-    private final Talon frontRightMotor = new Talon(Constants.FRONT_RIGHT_MOTOR_ID);
-    private final Talon frontLeftMotor = new Talon(Constants.FRONT_LEFT_MOTOR_ID);
-    private final Talon rearRightMotor = new Talon(Constants.REAR_RIGHT_MOTOR_ID);
-    private final Talon rearLeftMotor = new Talon(Constants.REAR_LEFT_MOTOR_ID);
-    private final MecanumDrive chassis = new MecanumDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
+    final Talon frontRightMotor = new Talon(Constants.FRONT_RIGHT_MOTOR_ID);
+    final Talon frontLeftMotor = new Talon(Constants.FRONT_LEFT_MOTOR_ID);
+    final Talon rearRightMotor = new Talon(Constants.REAR_RIGHT_MOTOR_ID);
+    final Talon rearLeftMotor = new Talon(Constants.REAR_LEFT_MOTOR_ID);
+    final MecanumDrive chassis = new MecanumDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
 
     public void drive(double frontRightSpeed, double frontLeftSpeed, double rearRightSpeed, double rearLeftSpeed) {
-      chassis.MecanumDrive(frontRightSpeed, frontLeftSpeed, rearRightSpeed)
+      chassis.MecanumDrive(frontRightSpeed, frontLeftSpeed, rearRightSpeed);
+
     }
 
   }
