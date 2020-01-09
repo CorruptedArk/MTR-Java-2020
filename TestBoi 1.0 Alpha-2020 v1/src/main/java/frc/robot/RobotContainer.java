@@ -8,6 +8,7 @@
 package frc.robot;
 import java.util.Set;
 
+import frc.robot.Constants;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
@@ -33,33 +34,11 @@ public class RobotContainer {
   private final TeleOpCommand m_teleOpCommand = new TeleOpCommand();
   public final static DriveSubsystem m_driveSubsystem = new DriveSubsystem();
   
-  //Variables for Xbox Controller buttons NOTE: I do not know the actual button configuration all values are placeholder
-  public final int XBOX_A = 0;
-  public final int XBOX_B = 1;
-  public final int XBOX_X = 2;
-  public final int XBOX_Y = 3;
 
-  public final int XBOX_LBumper = 4;
-  public final int XBOX_RBumper = 5;
-  public final int XBOX_LTrigger = 6;
-  public final int XBOX_RTrigger = 7;
-
-  public final int XBOX_LStickXAxis = 8;
-  public final int XBOX_LStickYAxis = 9;
-  public final int XBOX_LStickButton= 10;
   
-  public final int XBOX_RStickXAxis = 11;
-  public final int XBOX_RStickYAxis = 12;
-  public final int XBOX_RStickButton = 13;
+  public static final Joystick pilot = new Joystick(Constants.PILOT_ID);
+  public static final Joystick artillery = new Joystick(Constants.ARTILLERY_ID);
   
-  public final int XBOX_Start = 14;
-  public final int XBOX_Select = 15; //you may also know this as Back
-  public final int XBOX_Home = 16; //Don't know if you can actually map this one
-  
-
-
-
-
 
 
   /**
@@ -81,9 +60,9 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     //sets up controller
-    XboxController driveController = new XboxController(0);
+    XboxController driveController = new XboxController(Constants.PILOT_ID);
     //defining a button, this will need to be done for every button used
-    JoystickButton xboxLStickX = new JoystickButton(driveController, XBOX_LStickXAxis);
+    JoystickButton xboxLStickX = new JoystickButton(driveController, Constants.XBOX_LStickXAxis);
     //linking a button to a command
     xboxLStickX.whenActive(null/*command*/);
 

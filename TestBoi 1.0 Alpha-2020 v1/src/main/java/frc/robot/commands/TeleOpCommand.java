@@ -26,11 +26,13 @@ public class TeleOpCommand extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-  }
+    
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    DriveSubsystem drivesub = new DriveSubsystem();
+    drivesub.drive(1.0, 0.0, 0.0);
   }
 
   // Called once the command ends or is interrupted.

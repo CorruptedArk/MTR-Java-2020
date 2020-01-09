@@ -30,8 +30,29 @@ public final class Constants {
     public static final int PILOT_ID = 0;
     public static final int ARTILLERY_ID = 1;
 
-    public static final Joystick pilot = new Joystick(PILOT_ID);
-    public static final Joystick artillery = new Joystick(ARTILLERY_ID);
+    //Variables for Xbox Controller buttons NOTE: I do not know the actual button configuration all values are placeholder
+    public static final int XBOX_A = 0;
+    public static final int XBOX_B = 1;
+    public static final int XBOX_X = 2;
+    public static final int XBOX_Y = 3;
+
+    public static final int XBOX_LBumper = 4;
+    public static final int XBOX_RBumper = 5;
+    public static final int XBOX_LTrigger = 6;
+    public static final int XBOX_RTrigger = 7;
+
+    public static final int XBOX_LStickXAxis = 8;
+    public static final int XBOX_LStickYAxis = 9;
+    public static final int XBOX_LStickButton= 10;
+    
+    public static final int XBOX_RStickXAxis = 11;
+    public static final int XBOX_RStickYAxis = 12;
+    public static final int XBOX_RStickButton = 13;
+    
+    public static final int XBOX_Start = 14;
+    public static final int XBOX_Select = 15; //you may also know this as Back
+    public static final int XBOX_Home = 16; //Don't know if you can actually map this one
+    
 
 
 }
