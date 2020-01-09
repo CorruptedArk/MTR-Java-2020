@@ -80,27 +80,13 @@ public class RobotContainer {
    * on the device
    */
   private void configureButtonBindings() {
-<<<<<<< HEAD
     //sets up controller
     XboxController driveController = new XboxController(0);
     //defining a button, this will need to be done for every button used
     JoystickButton xboxLStickX = new JoystickButton(driveController, XBOX_LStickXAxis);
     //linking a button to a command
     xboxLStickX.whenActive(null/*command*/);
-=======
-    XboxController drivController = new XboxController(0);
-    drivController.getAButton();
-    @
-    if(drivController.getAButton()) {
-      
-      
 
-    }
-
-
-
-
->>>>>>> 065f8f5dc552057c4452ac24c00a182781c3df28
   }
 
 
