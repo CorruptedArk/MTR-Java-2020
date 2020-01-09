@@ -9,7 +9,9 @@ package frc.robot;
 import java.util.Set;
 
 import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.commands.*;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.TeleOpCommand;
 import frc.robot.subsystems.DriveSubsystem;
@@ -78,12 +80,27 @@ public class RobotContainer {
    * on the device
    */
   private void configureButtonBindings() {
+<<<<<<< HEAD
     //sets up controller
     XboxController driveController = new XboxController(0);
     //defining a button, this will need to be done for every button used
     JoystickButton xboxLStickX = new JoystickButton(driveController, XBOX_LStickXAxis);
     //linking a button to a command
     xboxLStickX.whenActive(null/*command*/);
+=======
+    XboxController drivController = new XboxController(0);
+    drivController.getAButton();
+    @
+    if(drivController.getAButton()) {
+      
+      
+
+    }
+
+
+
+
+>>>>>>> 065f8f5dc552057c4452ac24c00a182781c3df28
   }
 
 
