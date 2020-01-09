@@ -36,8 +36,9 @@ public class DriveSubsystem extends SubsystemBase {
   
 
   
-  public void drive(final double rightSpeed, final double leftSpeed) {
-      chassis.driveCartesian(rightSpeed, leftSpeed, 0,0);
+  public void drive(final double YSpeed, final double XSpeed, final Double rotationalSpeed) {
+    //if I'm correct Yspeed is forward-back, Xspeed is right-left strafing and rotational speed is rotation
+      chassis.driveCartesian(YSpeed, XSpeed, rotationalSpeed,0);
 
   }
   @Override
