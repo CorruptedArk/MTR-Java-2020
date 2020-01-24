@@ -8,17 +8,22 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import edu.wpi.first.wpilibj.drive.MecanumDrive;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import frc.robot.Constants;
-import frc.robot.RobotContainer;
+//import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj.Talon;
 
 public class DriveSubsystem extends SubsystemBase {
-  private final Talon frontRightMotor;
+  /*private final Talon frontRightMotor;
   private final Talon rearRightMotor;
   private final Talon frontLeftMotor;
   private final Talon rearLeftMotor;
-  private final MecanumDrive chassis;
+  private final MecanumDrive chassis;*/
+
+  private final Talon rightTalon;
+  private final Talon leftTalon;
+  private final DifferentialDrive chassis;
+
  
   
   /**
@@ -27,22 +32,21 @@ public class DriveSubsystem extends SubsystemBase {
   //DriveSystem Constuctor
   public DriveSubsystem() {
     //link motors to the const/final 
-    frontRightMotor = new Talon(Constants.FRONT_RIGHT_MOTOR_ID);
-    frontLeftMotor = new Talon(Constants.FRONT_LEFT_MOTOR_ID);
-    rearRightMotor = new Talon(Constants.REAR_RIGHT_MOTOR_ID);
-    rearLeftMotor = new Talon(Constants.REAR_LEFT_MOTOR_ID);
-    chassis = new MecanumDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
+    rightTalon = new Talon(Constants.RIGHT_MOTOR_ID);
+    leftTalon = new Talon(Constants.LEFT_MOTOR_ID);
+    chassis = new DifferentialDrive(leftTalon, rightTalon);
   }
   
 
   
-  public void drive(final double YSpeed, final double XSpeed, final Double rotationalSpeed) {
-    //if I'm correct Yspeed is forward-back, Xspeed is right-left strafing and rotational speed is rotation
-      chassis.driveCartesian(YSpeed, XSpeed, rotationalSpeed,0);
-
+  public void drive(final double leftSpeed, final double rightSpeed) {
+    
+      chassis.tankDrive(leftSpeed, rightSpeed);
+ 
   }
   @Override
   public void periodic() {
+    
     // This method will be called once per scheduler run
   }
 }

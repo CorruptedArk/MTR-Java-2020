@@ -39,7 +39,10 @@ public class RobotContainer {
   public static final Joystick pilot = new Joystick(Constants.PILOT_ID);
   public static final Joystick artillery = new Joystick(Constants.ARTILLERY_ID);
   
-
+  //check old 2019 code for info
+  public static final double ZERO_MARGIN= 0.0;
+  public static volatile double driveScale= 0.0;
+  public static final double DRIVE_STEP_VAL = 0.0;
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -62,13 +65,37 @@ public class RobotContainer {
     //sets up controller
     XboxController driveController = new XboxController(Constants.PILOT_ID);
     //defining a button, this will need to be done for every button used
-    JoystickButton xboxLStickX = new JoystickButton(driveController, Constants.XBOX_LStickXAxis);
+    JoystickButton xboxLStickButton = new JoystickButton(driveController, Constants.XBOX_LStickButton);
     //linking a button to a command
-    xboxLStickX.whenActive(null/*command*/);
+    xboxLStickButton.whenActive(null/*command*/);
 
   }
 
+  public static double Buffer(int axisVal, Joystick joystick, boolean inverted, double highMargin, double lowMargin, double scale){
+    //get raw input from joystick
+    double moveRaw = joystick.getRawAxis(axisVal);
+    //processed movement info
+    double moveProc = 0.0;
+      
+      if(moveRaw >= highMargin && moveRaw <= lowMargin){
+        moveProc = 0.0;
+      } else{
+        //invert controls
+        if (inverted){
+          moveProc = -moveRaw;
 
+        }else{
+          moveProc = moveRaw;
+          
+        }
+      }
+    //make sure the scale is a positive value or its absolute value
+    scale = Math.abs(scale);
+    //multipl the raw value by a scale
+    moveProc = moveProc * scale;
+    //return the processed movement value to the caller
+    return moveProc;
+  }
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *

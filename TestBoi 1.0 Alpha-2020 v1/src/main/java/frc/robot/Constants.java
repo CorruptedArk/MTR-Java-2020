@@ -6,8 +6,8 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
-
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.XboxController;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
@@ -20,10 +20,9 @@ import edu.wpi.first.wpilibj.Joystick;
 public final class Constants {
 
     // Motor IDs are here. //
-    public static final int FRONT_RIGHT_MOTOR_ID = 0;
-    public static final int FRONT_LEFT_MOTOR_ID = 1;
-    public static final int REAR_RIGHT_MOTOR_ID = 2;
-    public static final int REAR_LEFT_MOTOR_ID = 3;
+    public static final int RIGHT_MOTOR_ID = 0;
+    public static final int LEFT_MOTOR_ID = 1;
+   
 
     // Driver IDs are here. //
 
@@ -31,7 +30,7 @@ public final class Constants {
     public static final int ARTILLERY_ID = 1;
 
     //Variables for Xbox Controller buttons NOTE: I do not know the actual button configuration all values are placeholder
-    public static final int XBOX_A = 0;
+    public static final int XBOX_A = XboxController.Button.kA.value;
     public static final int XBOX_B = 1;
     public static final int XBOX_X = 2;
     public static final int XBOX_Y = 3;

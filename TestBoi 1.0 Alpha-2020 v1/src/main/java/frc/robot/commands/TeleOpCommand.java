@@ -34,7 +34,9 @@ public class TeleOpCommand extends CommandBase {
   @Override
   public void execute() {
     DriveSubsystem drivesub = new DriveSubsystem();
-    drivesub.drive(1.0, 0.0, 0.0);
+    
+    drivesub.drive( RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, false, 0.0, 0.0, 1.0/*scale */),
+      RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, true, 0.0, 0.0, 1.0/*scale */));
   }
 
   // Called once the command ends or is interrupted.
