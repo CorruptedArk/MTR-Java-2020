@@ -19,13 +19,20 @@ import edu.wpi.first.wpilibj.XboxController;
  */
 public final class Constants {
 
-    // Motor IDs are here. //
+    // Motor IDs are here for drive. //
     public static final int RIGHT_MOTOR_ID = 0;
     public static final int LEFT_MOTOR_ID = 1;
-   
+
+    // Fly wheel IDs are here.//
+    public static final int LEFT_FLY_WHEEL_MOTOR_ID = 2;
+    public static final int RIGHT_FLY_WHEEL_MOTOR_ID = 3;
+
+    // IDs for conveyor belt and arm tilt motors here.//
+    public static final int TILT_MOTOR_ID = 4;
+    public static final int CONVEYOR_BELT_MOTOR_ID = 5; 
+
 
     // Driver IDs are here. //
-
     public static final int PILOT_ID = 0;
     public static final int ARTILLERY_ID = 1;
 

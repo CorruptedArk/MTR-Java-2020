@@ -40,9 +40,9 @@ public class RobotContainer {
   public static final Joystick artillery = new Joystick(Constants.ARTILLERY_ID);
   
   //check old 2019 code for info
-  public static final double ZERO_MARGIN= 0.0;
-  public static volatile double driveScale= 0.0;
-  public static final double DRIVE_STEP_VAL = 0.0;
+  public static final double ZERO_MARGIN = 0.18;
+  public static volatile double driveScale = 0.5;
+  public static final double DRIVE_STEP_VAL = 0.1;
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
