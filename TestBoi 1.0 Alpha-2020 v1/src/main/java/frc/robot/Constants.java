@@ -31,6 +31,21 @@ public final class Constants {
     public static final int TILT_MOTOR_ID = 4;
     public static final int CONVEYOR_BELT_MOTOR_ID = 5; 
 
+    // Limit Switch IDs go here//
+    public static final int BOTTOM_LIMIT_SWITCH_ID = 0;
+    public static final int MIDDLE_LIMIT_SWITCH_ID = 1;
+    public static final int TOP_TIER_LIMIT_SWITCH_ID = 2;
+
+    // Servo IDS //
+
+    public static final int LOCK_TILT_SERVO_ID = 0;
+
+    // Color Sensor ID // 
+    public static final int COLOR_SENSOR_ID = 0;
+
+    // Camera ID //
+    public static final int CAMERA_ID = 0;
+
 
     // Driver IDs are here. //
     public static final int PILOT_ID = 0;
