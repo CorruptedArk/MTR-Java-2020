@@ -33,6 +33,7 @@ public class RobotContainer {
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   private final TeleOpCommand m_teleOpCommand = new TeleOpCommand();
+  public final ColorBlueCommand m_blueCommand = new ColorBlueCommand();
   public final static DriveSubsystem m_driveSubsystem = new DriveSubsystem();
   public final static LauncherSubsystem m_launcherSubsystem = new LauncherSubsystem();
   

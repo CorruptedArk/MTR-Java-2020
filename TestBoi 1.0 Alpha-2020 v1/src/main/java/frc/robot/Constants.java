@@ -18,6 +18,12 @@ import edu.wpi.first.wpilibj.XboxController;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+    public int modeID = 0;
+
+    public static final int INTAKE_MODE_ID = 0;
+    public static final int LAUNCH_MODE_ID = 1;
+    public static final int WHEEL_OF_FORTUNE_MODE_ID = 2;
+
 
     // Motor IDs are here for drive. //
     public static final int RIGHT_MOTOR_ID = 0;
