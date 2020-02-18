@@ -22,6 +22,7 @@ public class TeleOpCommand extends CommandBase {
    */
   public TeleOpCommand() {
     // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(RobotContainer.m_launcherSubsystem);
     addRequirements(RobotContainer.m_driveSubsystem);
   }
 
@@ -35,10 +36,12 @@ public class TeleOpCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    DriveSubsystem drivesub = new DriveSubsystem();
+    DriveSubsystem driveSub = new DriveSubsystem();
+    LauncherSubsystem launcherSub = new LauncherSubsystem();
     
-    drivesub.drive( RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, false, 0.0, 0.0, 1.0/*scale */),
-      RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, true, 0.0, 0.0, 1.0/*scale */));
+    driveSub.drive( RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, false, 0.0, 0.0, Constants.driveScale),
+      RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, true, 0.0, 0.0, Constants.driveScale));
+
   }
 
   // Called once the command ends or is interrupted.

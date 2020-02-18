@@ -6,7 +6,6 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 
 /**
@@ -18,8 +17,12 @@ import edu.wpi.first.wpilibj.XboxController;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+    // Globally available Variables, Not Constants
     public static int modeID = 0;
 
+    //used to define the speed at which the robot will travel By DEFAULT this is 0.5
+    public static double driveScale = 0.5;
+    
     public static final int INTAKE_MODE_ID = 0;
     public static final int LAUNCH_MODE_ID = 1;
     public static final int WHEEL_OF_FORTUNE_MODE_ID = 2;
@@ -57,28 +60,27 @@ public final class Constants {
     public static final int PILOT_ID = 0;
     public static final int ARTILLERY_ID = 1;
 
-    //Variables for Xbox Controller buttons NOTE: I do not know the actual button configuration all values are placeholder
+    //Variables for Xbox Controller buttons
     public static final int XBOX_A = XboxController.Button.kA.value;
-    public static final int XBOX_B = 1;
-    public static final int XBOX_X = 2;
-    public static final int XBOX_Y = 3;
+    public static final int XBOX_B = XboxController.Button.kB.value;
+    public static final int XBOX_X = XboxController.Button.kX.value;
+    public static final int XBOX_Y = XboxController.Button.kY.value;
 
-    public static final int XBOX_LBumper = 4;
-    public static final int XBOX_RBumper = 5;
-    public static final int XBOX_LTrigger = 6;
-    public static final int XBOX_RTrigger = 7;
+    public static final int XBOX_LBumper = XboxController.Button.kBumperLeft.value;
+    public static final int XBOX_RBumper = XboxController.Button.kBumperRight.value;
+    public static final int XBOX_LTrigger = XboxController.Axis.kLeftTrigger.value;
+    public static final int XBOX_RTrigger = XboxController.Axis.kRightTrigger.value;
 
-    public static final int XBOX_LStickXAxis = 8;
-    public static final int XBOX_LStickYAxis = 9;
-    public static final int XBOX_LStickButton= 10;
+    public static final int XBOX_LStickXAxis = XboxController.Axis.kLeftX.value;
+    public static final int XBOX_LStickYAxis = XboxController.Axis.kLeftY.value;
+    public static final int XBOX_LStickButton= XboxController.Button.kStickLeft.value;
     
-    public static final int XBOX_RStickXAxis = 11;
-    public static final int XBOX_RStickYAxis = 12;
-    public static final int XBOX_RStickButton = 13;
-    
-    public static final int XBOX_Start = 14;
-    public static final int XBOX_Select = 15; //you may also know this as Back
-    public static final int XBOX_Home = 16; //Don't know if you can actually map this one
+    public static final int XBOX_RStickXAxis = XboxController.Axis.kRightX.value;
+    public static final int XBOX_RStickYAxis = XboxController.Axis.kRightY.value;
+    public static final int XBOX_RStickButton = XboxController.Button.kStickRight.value;
+
+    public static final int XBOX_Start = XboxController.Button.kStart.value;
+    public static final int XBOX_Select = XboxController.Button.kBack.value; 
     
 
 

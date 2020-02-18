@@ -6,10 +6,8 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
-import java.util.Set;
 
 import frc.robot.Constants;
-import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.*;
@@ -70,36 +68,49 @@ public class RobotContainer {
   private void configureButtonBindings() {
     //sets up controller
     XboxController driveController = new XboxController(Constants.PILOT_ID);
-    //defining a button, this will need to be done for every button used
-    JoystickButton xboxLStickButton = new JoystickButton(driveController, Constants.XBOX_LStickButton);
-    //linking a button to a command
-    xboxLStickButton.whenActive(null/*command*/);
 
+
+    //Xbox A Button Mapping
+    JoystickButton xboxAButton = new JoystickButton(driveController, Constants.XBOX_A);
+    xboxAButton.whenPressed(m_buttonACommand);
+    //Xbox B Button Mapping
+    JoystickButton xboxBButton = new JoystickButton(driveController, Constants.XBOX_B);
+    xboxBButton.whenPressed(m_buttonBCommand);
+    //Xbox X Button Mapping
+    JoystickButton xboxXButton = new JoystickButton(driveController, Constants.XBOX_X);
+    xboxXButton.whenPressed(m_buttonXCommand);
+    //Xbox Y Button Mapping
+    JoystickButton xboxYButton = new JoystickButton(driveController, Constants.XBOX_Y);
+    xboxYButton.whenPressed(m_buttonYCommand);
   }
 
+
   public static double Buffer(int axisVal, Joystick joystick, boolean inverted, double highMargin, double lowMargin, double scale){
-    //get raw input from joystick
+    
     double moveRaw = joystick.getRawAxis(axisVal);
-    //processed movement info
     double moveProc = 0.0;
       
-      if(moveRaw >= highMargin && moveRaw <= lowMargin){
-        moveProc = 0.0;
-      } else{
-        //invert controls
-        if (inverted){
-          moveProc = -moveRaw;
+    if(moveRaw >= highMargin && moveRaw <= lowMargin){
+      moveProc = 0.0;
+    }
+      
+    else {
 
-        }else{
-          moveProc = moveRaw;
-          
-        }
+      //invert values
+      if (inverted){
+        moveProc = -moveRaw;
+
       }
-    //make sure the scale is a positive value or its absolute value
+
+      else{
+        moveProc = moveRaw;
+          
+      }
+    }
+    
     scale = Math.abs(scale);
-    //multipl the raw value by a scale
     moveProc = moveProc * scale;
-    //return the processed movement value to the caller
+    
     return moveProc;
   }
   /**
