@@ -1,10 +1,12 @@
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj.*;
 import frc.robot.Constants;
-
+import frc.robot.subsystems.DriveSubsystem;
 
 public class LauncherSubsystem extends SubsystemBase{
     private static final Talon conveyorTalon = new Talon(Constants.CONVEYOR_BELT_MOTOR_ID);
@@ -12,7 +14,11 @@ public class LauncherSubsystem extends SubsystemBase{
     private static final Talon leftFlyTalon = new Talon(Constants.LEFT_FLY_WHEEL_MOTOR_ID); 
     private static final Talon tiltTalon = new Talon(Constants.TILT_MOTOR_ID);
     private static final Servo lockTiltServo = new Servo(Constants.LOCK_TILT_SERVO_ID);
-   
+    private static final DigitalInput topSwitch = new DigitalInput(Constants.TOP_TIER_LIMIT_SWITCH_ID);
+    private static final DigitalInput middleSwitch = new DigitalInput(Constants.MIDDLE_LIMIT_SWITCH_ID);
+    private static final DigitalInput bottomSwitch = new DigitalInput(Constants.BOTTOM_LIMIT_SWITCH_ID);
+    private DriveSubsystem driveSub = new DriveSubsystem();
+    private double motorOutput = 0.0; 
 
 
     public LauncherSubsystem(){
@@ -29,28 +35,78 @@ public class LauncherSubsystem extends SubsystemBase{
 
     public void TiltUp(){
         // as long as its not as high as it can go
-        if(Constants.modeID != 2){
+        if(Constants.modeID == Constants.LAUNCH_MODE_ID){
 
         }
         else
         {
+            if(topSwitch.get())
+            {
+                Math.max(motorOutput, 0);
+                tiltTalon.set(motorOutput);
+            }else
+            {
+                tiltTalon.set(-2);
+            }
             //check limit switches for true on the switch that is above the current mode. 
         }
 
     }
     public void TiltDown(){
 
+        if(Constants.modeID == Constants.INTAKE_MODE_ID){
+
+        }
+        else
+        {
+            if(topSwitch.get())
+            {
+                Math.min(motorOutput, 0);
+                tiltTalon.set(motorOutput);
+            }else
+            {
+                tiltTalon.set(2);
+            }
+            //check limit switches for true on the switch that is above the current mode. 
+        }
+
 
     }
     
     public void CannonFire(){
+        double flySpeed = 5;
 
+        rightFlyTalon.set(-flySpeed);
+        leftFlyTalon.set(flySpeed);
+    }
+    public void CannonIdle(boolean previousMode){
+        // previousMode is used to find which way it needs to be maxxed or minned to stop the motor without permanently stopping them
+        // True is intake, false is launch
+        double flySpeed = 0;
 
+        if(previousMode){
+            Math.min(flySpeed, 0);
+            rightFlyTalon.set(flySpeed);
+
+            Math.max(flySpeed, 0);
+            leftFlyTalon.set(flySpeed);
+        }
+        if(!previousMode){
+            Math.max(flySpeed, 0);
+            rightFlyTalon.set(flySpeed);
+
+            Math.min(flySpeed, 0);
+            leftFlyTalon.set(flySpeed);
+        }
 
     }
 
-    public void CannonSuck(){
 
+    public void CannonIntake(){
+        double flySpeed = 5;
+
+        rightFlyTalon.set(-flySpeed);
+        leftFlyTalon.set(flySpeed);
 
     }
 
