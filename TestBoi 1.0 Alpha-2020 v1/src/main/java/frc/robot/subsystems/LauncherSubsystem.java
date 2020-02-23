@@ -4,9 +4,7 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import edu.wpi.first.wpilibj.*;
 import frc.robot.Constants;
-import frc.robot.subsystems.DriveSubsystem;
 
 public class LauncherSubsystem extends SubsystemBase{
     private static final Talon conveyorTalon = new Talon(Constants.CONVEYOR_BELT_MOTOR_ID);
@@ -17,7 +15,6 @@ public class LauncherSubsystem extends SubsystemBase{
     private static final DigitalInput topSwitch = new DigitalInput(Constants.TOP_TIER_LIMIT_SWITCH_ID);
     private static final DigitalInput middleSwitch = new DigitalInput(Constants.MIDDLE_LIMIT_SWITCH_ID);
     private static final DigitalInput bottomSwitch = new DigitalInput(Constants.BOTTOM_LIMIT_SWITCH_ID);
-    private DriveSubsystem driveSub = new DriveSubsystem();
     private double motorOutput = 0.0; 
 
 
@@ -42,6 +39,10 @@ public class LauncherSubsystem extends SubsystemBase{
         {
             if(topSwitch.get())
             {
+                /*
+                NEVER set motors to 0, for some reason according to documentation, setting a motor to 0 makes it 
+                permanently unusable, setting a max or min of 0 is the best alternative.  
+                */
                 Math.max(motorOutput, 0);
                 tiltTalon.set(motorOutput);
             }else

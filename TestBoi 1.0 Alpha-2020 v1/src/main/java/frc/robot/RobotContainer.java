@@ -7,14 +7,11 @@
 
 package frc.robot;
 
-import frc.robot.Constants;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.*;
-import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.TeleOpCommand;
 import frc.robot.subsystems.DriveSubsystem;
-import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.LauncherSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
@@ -28,9 +25,9 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
  
-  private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
-  private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
+
   private final TeleOpCommand m_teleOpCommand = new TeleOpCommand();
+  public final AutonCommand m_autonCommand = new AutonCommand();
   public final ButtonXCommand m_buttonXCommand = new ButtonXCommand();
   public final ButtonYCommand m_buttonYCommand = new ButtonYCommand();
   public final ButtonACommand m_buttonACommand = new ButtonACommand();
@@ -69,8 +66,8 @@ public class RobotContainer {
    * on the device
    */
   private void configureButtonBindings() {
-    //sets up controller
-    XboxController driveController = new XboxController(Constants.PILOT_ID);
+    // sets up controller
+    //XboxController driveController = new XboxController(Constants.PILOT_ID);
     XboxController artilleryController = new XboxController(Constants.ARTILLERY_ID);
 
 
@@ -133,6 +130,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return m_autoCommand;
+    return m_autonCommand;
   }
 }
