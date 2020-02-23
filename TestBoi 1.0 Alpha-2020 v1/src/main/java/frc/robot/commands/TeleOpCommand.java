@@ -38,7 +38,7 @@ public class TeleOpCommand extends CommandBase {
     DriveSubsystem driveSub = new DriveSubsystem();
     LauncherSubsystem launcherSub = new LauncherSubsystem();
     
-    driveSub.drive( RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, false, 0.0, 0.0, Constants.driveScale),
+    driveSub.drive(RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, false, 0.0, 0.0, Constants.driveScale),
       RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, true, 0.0, 0.0, Constants.driveScale));
 
   }

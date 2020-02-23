@@ -39,11 +39,11 @@ public class RobotContainer {
   public final static LauncherSubsystem m_launcherSubsystem = new LauncherSubsystem();
   
 
-  
+  // Sets up the controllers that control the robot.
   public static final Joystick pilot = new Joystick(Constants.PILOT_ID);
   public static final Joystick artillery = new Joystick(Constants.ARTILLERY_ID);
   
-  //check old 2019 code for info
+  //check old 2019 code for info.
   public static final double ZERO_MARGIN = 0.18;
   public static volatile double driveScale = 0.5;
   public static final double DRIVE_STEP_VAL = 0.1;
@@ -66,31 +66,28 @@ public class RobotContainer {
    * on the device
    */
   private void configureButtonBindings() {
-    // sets up controller
-    //XboxController driveController = new XboxController(Constants.PILOT_ID);
-    XboxController artilleryController = new XboxController(Constants.ARTILLERY_ID);
-
+  
 
     //Xbox A Button Mapping
-    JoystickButton xboxAButton = new JoystickButton(artilleryController, Constants.XBOX_A);
+    JoystickButton xboxAButton = new JoystickButton(artillery, Constants.XBOX_A);
     xboxAButton.whenPressed(m_buttonACommand);
     //Xbox B Button Mapping
-    JoystickButton xboxBButton = new JoystickButton(artilleryController, Constants.XBOX_B);
+    JoystickButton xboxBButton = new JoystickButton(artillery, Constants.XBOX_B);
     xboxBButton.whenPressed(m_buttonBCommand);
     //Xbox X Button Mapping
-    JoystickButton xboxXButton = new JoystickButton(artilleryController, Constants.XBOX_X);
+    JoystickButton xboxXButton = new JoystickButton(artillery, Constants.XBOX_X);
     xboxXButton.whenPressed(m_buttonXCommand);
     //Xbox Y Button Mapping
-    JoystickButton xboxYButton = new JoystickButton(artilleryController, Constants.XBOX_Y);
+    JoystickButton xboxYButton = new JoystickButton(artillery, Constants.XBOX_Y);
     xboxYButton.whenPressed(m_buttonYCommand);
     //Xbox Start Button Mapping
-    JoystickButton xboxStartButton = new JoystickButton(artilleryController, Constants.XBOX_Start);
+    JoystickButton xboxStartButton = new JoystickButton(artillery, Constants.XBOX_Start);
     xboxStartButton.whenPressed(m_changetoLaunchCommand);
     //Xbox Select Button Mapping
-    JoystickButton xboxSelectButton = new JoystickButton(artilleryController, Constants.XBOX_Select);
+    JoystickButton xboxSelectButton = new JoystickButton(artillery, Constants.XBOX_Select);
     xboxSelectButton.whenPressed(m_changetoIntakeCommand);
     //Xbox Right Joystick Click Button Mapping
-    JoystickButton xboxRightJoystickClick = new JoystickButton(artilleryController, Constants.XBOX_RStickButton);
+    JoystickButton xboxRightJoystickClick = new JoystickButton(artillery, Constants.XBOX_RStickButton);
     xboxRightJoystickClick.whenPressed(m_changetoWheelOfFortuneCommand);
   }
 
