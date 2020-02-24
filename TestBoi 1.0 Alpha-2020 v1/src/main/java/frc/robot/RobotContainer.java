@@ -8,7 +8,6 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.*;
 import frc.robot.commands.TeleOpCommand;
 import frc.robot.subsystems.DriveSubsystem;
@@ -39,7 +38,7 @@ public class RobotContainer {
   public final static LauncherSubsystem m_launcherSubsystem = new LauncherSubsystem();
   
 
-  // Sets up the controllers that control the robot.
+  
   public static final Joystick pilot = new Joystick(Constants.PILOT_ID);
   public static final Joystick artillery = new Joystick(Constants.ARTILLERY_ID);
   
@@ -66,7 +65,6 @@ public class RobotContainer {
    * on the device
    */
   private void configureButtonBindings() {
-  
 
     //Xbox A Button Mapping
     JoystickButton xboxAButton = new JoystickButton(artillery, Constants.XBOX_A);

@@ -4,52 +4,21 @@ import frc.robot.Constants;
 import frc.robot.RobotContainer;
 
 public class ButtonACommand extends CommandBase
-    {
-        public ButtonACommand(){
+{
+    @Override
+    public void execute(){
 
-            addRequirements(RobotContainer.m_launcherSubsystem);
+        if(Constants.modeID == Constants.INTAKE_MODE_ID){
+
         }
 
+        if(Constants.modeID == Constants.WHEEL_OF_FORTUNE_MODE_ID){
 
+        }
 
-        { 
+        if(Constants.modeID == Constants.LAUNCH_MODE_ID){
 
-    
-
-    if(Constants.modeID == Constants.INTAKE_MODE_ID){
-
-
-    }
-
-    if(Constants.modeID == Constants.WHEEL_OF_FORTUNE_MODE_ID){
-
-    }
-
-    if(Constants.modeID == Constants.LAUNCH_MODE_ID){
-
-    }
-
-
-    }
-
-    // Called when the command is initially scheduled.
-    @Override
-    public void initialize() {
-  
-    }
-  
-
-    // Called every time the scheduler runs while the command is scheduled.
-    @Override
-    public void execute() {
- 
-  
-
-    }
-
-    // Called once the command ends or is interrupted.
-    @Override
-    public void end(boolean interrupted) {
+        }
     }
 
     // Returns true when the command should end.

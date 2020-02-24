@@ -19,13 +19,18 @@ import edu.wpi.first.wpilibj.XboxController;
 public final class Constants {
     // Globally available Variables, Not Constants
     public static int modeID = 0;
+    public static int lastModeID = 0; 
 
     //used to define the speed at which the robot will travel By DEFAULT this is 0.5
     public static double driveScale = 0.5;
     
+    // Mode ID's
     public static final int INTAKE_MODE_ID = 0;
     public static final int LAUNCH_MODE_ID = 1;
     public static final int WHEEL_OF_FORTUNE_MODE_ID = 2;
+    
+    //Speed for cannon tilt
+    public static final double tiltSpeed = 2.0;
 
 
     // Motor IDs are here for drive. //

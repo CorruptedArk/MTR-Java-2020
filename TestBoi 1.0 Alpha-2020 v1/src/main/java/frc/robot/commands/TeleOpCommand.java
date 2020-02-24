@@ -7,6 +7,9 @@
 
 package frc.robot.commands;
 
+import com.fasterxml.jackson.databind.ser.std.StdKeySerializers.Default;
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.Constants;
@@ -15,10 +18,17 @@ import frc.robot.subsystems.LauncherSubsystem;
 import frc.robot.RobotContainer;
 
 
+
 public class TeleOpCommand extends CommandBase {
   /**
    * Creates a new TeleOp.
+   * 
+   * 
    */
+  private static final DigitalInput topSwitch = new DigitalInput(Constants.TOP_TIER_LIMIT_SWITCH_ID);
+  private static final DigitalInput middleSwitch = new DigitalInput(Constants.MIDDLE_LIMIT_SWITCH_ID);
+  private static final DigitalInput bottomSwitch = new DigitalInput(Constants.BOTTOM_LIMIT_SWITCH_ID);
+  private static final Talon tiltTalon = new Talon(Constants.TILT_MOTOR_ID);
   public TeleOpCommand() {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(RobotContainer.m_launcherSubsystem);
@@ -41,6 +51,48 @@ public class TeleOpCommand extends CommandBase {
     driveSub.drive(RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, false, 0.0, 0.0, Constants.driveScale),
       RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, true, 0.0, 0.0, Constants.driveScale));
 
+    if(topSwitch.get()){
+      Constants.lastModeID = Constants.LAUNCH_MODE_ID;
+    }
+    if(middleSwitch.get()){
+      Constants.lastModeID = Constants.WHEEL_OF_FORTUNE_MODE_ID;
+    }
+    if(bottomSwitch.get()){
+      Constants.lastModeID = Constants.INTAKE_MODE_ID;
+    }
+
+    switch(Constants.modeID)
+    {
+      case Constants.LAUNCH_MODE_ID:
+        if(Constants.lastModeID == Constants.LAUNCH_MODE_ID){
+          tiltTalon.set(0);
+        }
+        else{
+          tiltTalon.set(Constants.tiltSpeed);
+        }
+      break;
+      
+      case Constants.WHEEL_OF_FORTUNE_MODE_ID:
+        if(Constants.lastModeID == Constants.LAUNCH_MODE_ID){
+          tiltTalon.set(-Constants.tiltSpeed);
+        }
+        if(Constants.lastModeID == Constants.INTAKE_MODE_ID){
+          tiltTalon.set(Constants.tiltSpeed);
+        }
+        if(Constants.lastModeID == Constants.WHEEL_OF_FORTUNE_MODE_ID){
+          tiltTalon.set(0);
+        }
+      break;
+
+      case Constants.INTAKE_MODE_ID:
+        if(Constants.lastModeID == Constants.INTAKE_MODE_ID){
+          tiltTalon.set(0);
+        }
+        else{
+          tiltTalon.set(-Constants.tiltSpeed);
+        }
+      break;
+    }
   }
 
   // Called once the command ends or is interrupted.
