@@ -18,14 +18,10 @@ import edu.wpi.first.wpilibj.XboxController;
  */
     public final class Constants {
 
-    
-
 
     // Variable for the speed of the tilt of the arm of the robot.
     public static final double tiltSpeed = .75;
 
-    // This is used to speed up or slow down the speed of the robot.
-    public static double driveScale = 0.5;
     
     public static final int INTAKE_MODE_ID = 0;
     public static final int LAUNCH_MODE_ID = 1;
@@ -63,6 +59,15 @@ import edu.wpi.first.wpilibj.XboxController;
     public static final int PILOT_ID = 0;
     public static final int ARTILLERY_ID = 1;
 
+    // Constants for the Axis on the controller.
+    public static final int XBOX_LTrigger = 0;
+    public static final int XBOX_RTrigger = 1;
+    public static final int XBOX_LStickXAxis = 2; 
+    public static final int XBOX_LStickYAxis = 3;
+    public static final int XBOX_RStickXAxis = 4;
+    public static final int XBOX_RStickYAxis = 5;
+    public static final int XBOX_dPad_Axis = 6;
+
     //Variables for Xbox Controller buttons
     public static final int XBOX_A = XboxController.Button.kA.value;
     public static final int XBOX_B = XboxController.Button.kB.value;
@@ -71,15 +76,8 @@ import edu.wpi.first.wpilibj.XboxController;
 
     public static final int XBOX_LBumper = XboxController.Button.kBumperLeft.value;
     public static final int XBOX_RBumper = XboxController.Button.kBumperRight.value;
-    public static final int XBOX_LTrigger = XboxController;
-    public static final int XBOX_RTrigger = XboxController.Axis.kRightTrigger.value;
 
-    public static final int XBOX_LStickXAxis = XboxController.Axis.kLeftX.value;
-    public static final int XBOX_LStickYAxis = XboxController.Axis.kLeftY.value;
     public static final int XBOX_LStickButton= XboxController.Button.kStickLeft.value;
-    
-    public static final int XBOX_RStickXAxis = XboxController.Axis.kRightX.value;
-    public static final int XBOX_RStickYAxis = XboxController.Axis.kRightY.value;
     public static final int XBOX_RStickButton = XboxController.Button.kStickRight.value;
 
     public static final int XBOX_Start = XboxController.Button.kStart.value;

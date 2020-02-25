@@ -8,6 +8,10 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.RobotContainer;
+import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.subsystems.LauncherSubsystem;
+import frc.robot.Constants;
 
 public class AutonCommand extends CommandBase {
   /**
@@ -15,6 +19,9 @@ public class AutonCommand extends CommandBase {
    */
   public AutonCommand() {
     // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(RobotContainer.m_driveSubsystem);
+    addRequirements(RobotContainer.m_launcherSubsystem);
+
   }
 
   // Called when the command is initially scheduled.

@@ -14,7 +14,6 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.Constants;
 import frc.robot.subsystems.LauncherSubsystem;
-
 import frc.robot.RobotContainer;
 
 
@@ -48,8 +47,10 @@ public class TeleOpCommand extends CommandBase {
     DriveSubsystem driveSub = new DriveSubsystem();
     LauncherSubsystem launcherSub = new LauncherSubsystem();
     
-    driveSub.drive(RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, false, 0.0, 0.0, Constants.driveScale),
-      RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, true, 0.0, 0.0, Constants.driveScale));
+
+    
+    driveSub.drive(RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, false, 0.0, 0.0, RobotContainer.driveScale),
+      RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, true, 0.0, 0.0, RobotContainer.driveScale));
 
     if(topSwitch.get()){
       RobotContainer.lastModeID = Constants.LAUNCH_MODE_ID;
