@@ -37,10 +37,15 @@ public class RobotContainer {
   public final static DriveSubsystem m_driveSubsystem = new DriveSubsystem();
   public final static LauncherSubsystem m_launcherSubsystem = new LauncherSubsystem();
   
-
   
   public static final Joystick pilot = new Joystick(Constants.PILOT_ID);
   public static final Joystick artillery = new Joystick(Constants.ARTILLERY_ID);
+
+    // Globally available Variables, Not Constants
+    public static int modeID = 0;
+    public static int lastModeID = 0;
+
+    
   
   //check old 2019 code for info.
   public static final double ZERO_MARGIN = 0.18;

@@ -16,21 +16,20 @@ import edu.wpi.first.wpilibj.XboxController;
  * <p>It is advised to statically import this class (or one of its inner classes) wherever the
  * constants are needed, to reduce verbosity.
  */
-public final class Constants {
-    // Globally available Variables, Not Constants
-    public static int modeID = 0;
-    public static int lastModeID = 0; 
+    public final class Constants {
 
-    //used to define the speed at which the robot will travel By DEFAULT this is 0.5
+    
+
+
+    // Variable for the speed of the tilt of the arm of the robot.
+    public static final double tiltSpeed = .75;
+
+    // This is used to speed up or slow down the speed of the robot.
     public static double driveScale = 0.5;
     
-    // Mode ID's
     public static final int INTAKE_MODE_ID = 0;
     public static final int LAUNCH_MODE_ID = 1;
     public static final int WHEEL_OF_FORTUNE_MODE_ID = 2;
-    
-    //Speed for cannon tilt
-    public static final double tiltSpeed = 2.0;
 
 
     // Motor IDs are here for drive. //
@@ -51,7 +50,6 @@ public final class Constants {
     public static final int TOP_TIER_LIMIT_SWITCH_ID = 2;
 
     // Servo IDS //
-
     public static final int LOCK_TILT_SERVO_ID = 0;
 
     // Color Sensor ID // 
@@ -73,7 +71,7 @@ public final class Constants {
 
     public static final int XBOX_LBumper = XboxController.Button.kBumperLeft.value;
     public static final int XBOX_RBumper = XboxController.Button.kBumperRight.value;
-    public static final int XBOX_LTrigger = XboxController.Axis.kLeftTrigger.value;
+    public static final int XBOX_LTrigger = XboxController;
     public static final int XBOX_RTrigger = XboxController.Axis.kRightTrigger.value;
 
     public static final int XBOX_LStickXAxis = XboxController.Axis.kLeftX.value;

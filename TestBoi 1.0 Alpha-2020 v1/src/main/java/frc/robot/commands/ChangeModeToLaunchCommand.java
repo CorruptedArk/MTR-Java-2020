@@ -32,7 +32,7 @@ public class ChangeModeToLaunchCommand extends CommandBase{
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-    Constants.modeID = Constants.LAUNCH_MODE_ID;
+    RobotContainer.modeID = Constants.LAUNCH_MODE_ID;
     finished = true;
 
     }

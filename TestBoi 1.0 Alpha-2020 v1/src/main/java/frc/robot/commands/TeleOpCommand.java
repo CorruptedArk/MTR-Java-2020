@@ -52,19 +52,19 @@ public class TeleOpCommand extends CommandBase {
       RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, true, 0.0, 0.0, Constants.driveScale));
 
     if(topSwitch.get()){
-      Constants.lastModeID = Constants.LAUNCH_MODE_ID;
+      RobotContainer.lastModeID = Constants.LAUNCH_MODE_ID;
     }
     if(middleSwitch.get()){
-      Constants.lastModeID = Constants.WHEEL_OF_FORTUNE_MODE_ID;
+      RobotContainer.lastModeID = Constants.WHEEL_OF_FORTUNE_MODE_ID;
     }
     if(bottomSwitch.get()){
-      Constants.lastModeID = Constants.INTAKE_MODE_ID;
+      RobotContainer.lastModeID = Constants.INTAKE_MODE_ID;
     }
 
-    switch(Constants.modeID)
+    switch(RobotContainer.modeID)
     {
       case Constants.LAUNCH_MODE_ID:
-        if(Constants.lastModeID == Constants.LAUNCH_MODE_ID){
+        if(RobotContainer.lastModeID == Constants.LAUNCH_MODE_ID){
           tiltTalon.set(0);
         }
         else{
@@ -73,19 +73,19 @@ public class TeleOpCommand extends CommandBase {
       break;
       
       case Constants.WHEEL_OF_FORTUNE_MODE_ID:
-        if(Constants.lastModeID == Constants.LAUNCH_MODE_ID){
+        if(RobotContainer.lastModeID == Constants.LAUNCH_MODE_ID){
           tiltTalon.set(-Constants.tiltSpeed);
         }
-        if(Constants.lastModeID == Constants.INTAKE_MODE_ID){
+        if(RobotContainer.lastModeID == Constants.INTAKE_MODE_ID){
           tiltTalon.set(Constants.tiltSpeed);
         }
-        if(Constants.lastModeID == Constants.WHEEL_OF_FORTUNE_MODE_ID){
+        if(RobotContainer.lastModeID == Constants.WHEEL_OF_FORTUNE_MODE_ID){
           tiltTalon.set(0);
         }
       break;
 
       case Constants.INTAKE_MODE_ID:
-        if(Constants.lastModeID == Constants.INTAKE_MODE_ID){
+        if(RobotContainer.lastModeID == Constants.INTAKE_MODE_ID) {
           tiltTalon.set(0);
         }
         else{

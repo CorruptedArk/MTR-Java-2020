@@ -32,7 +32,7 @@ public class ChangeModeToWheelOfFortuneCommand extends CommandBase{
   @Override
   public void execute() {
   
-  Constants.modeID = Constants.WHEEL_OF_FORTUNE_MODE_ID;
+  RobotContainer.modeID = Constants.WHEEL_OF_FORTUNE_MODE_ID;
   finished = true;
 
 }

@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
+import frc.robot.RobotContainer;
 
 public class LauncherSubsystem extends SubsystemBase{
     private static final Talon conveyorTalon = new Talon(Constants.CONVEYOR_BELT_MOTOR_ID);
@@ -32,7 +33,7 @@ public class LauncherSubsystem extends SubsystemBase{
 
     public void TiltUp(){
         // as long as its not as high as it can go
-        if(Constants.modeID == Constants.LAUNCH_MODE_ID){
+        if(RobotContainer.modeID == Constants.LAUNCH_MODE_ID){
 
         }
         else
@@ -55,7 +56,7 @@ public class LauncherSubsystem extends SubsystemBase{
     }
     public void TiltDown(){
 
-        if(Constants.modeID == Constants.INTAKE_MODE_ID){
+        if(RobotContainer.modeID == Constants.INTAKE_MODE_ID){
 
         }
         else
