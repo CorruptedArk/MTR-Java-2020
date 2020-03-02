@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Talon;
 
 
-
+/*
 public class ChangeModeToIntakeCommand extends CommandBase{
 
    private static final DigitalInput topSwitch = new DigitalInput(Constants.TOP_TIER_LIMIT_SWITCH_ID);
@@ -55,7 +55,7 @@ public class ChangeModeToIntakeCommand extends CommandBase{
    return finished;
    }
 }
-
+*/
 
 
 

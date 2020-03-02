@@ -5,7 +5,7 @@ import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj.Talon;
 import frc.robot.Constants;
 
-
+/*
 public class ChangeModeToWheelOfFortuneCommand extends CommandBase{
 
  
@@ -48,3 +48,5 @@ public class ChangeModeToWheelOfFortuneCommand extends CommandBase{
   return finished;
   }
 }
+
+*/

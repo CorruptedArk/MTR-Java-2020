@@ -31,9 +31,9 @@ public class RobotContainer {
   public final ButtonYCommand m_buttonYCommand = new ButtonYCommand();
   public final ButtonACommand m_buttonACommand = new ButtonACommand();
   public final ButtonBCommand m_buttonBCommand = new ButtonBCommand();
-  public final ChangeModeToLaunchCommand m_changetoLaunchCommand = new ChangeModeToLaunchCommand();
-  public final ChangeModeToWheelOfFortuneCommand m_changetoWheelOfFortuneCommand = new ChangeModeToWheelOfFortuneCommand();
-  public final ChangeModeToIntakeCommand m_changetoIntakeCommand = new ChangeModeToIntakeCommand();
+  //public final ChangeModeToLaunchCommand m_changetoLaunchCommand = new ChangeModeToLaunchCommand();
+  //public final ChangeModeToWheelOfFortuneCommand m_changetoWheelOfFortuneCommand = new ChangeModeToWheelOfFortuneCommand();
+  //public final ChangeModeToIntakeCommand m_changetoIntakeCommand = new ChangeModeToIntakeCommand();
   public final static DriveSubsystem m_driveSubsystem = new DriveSubsystem();
   public final static LauncherSubsystem m_launcherSubsystem = new LauncherSubsystem();
   
@@ -81,6 +81,7 @@ public class RobotContainer {
     //Xbox Y Button Mapping
     JoystickButton xboxYButton = new JoystickButton(artillery, Constants.XBOX_Y);
     xboxYButton.whenPressed(m_buttonYCommand);
+    /*
     //Xbox Start Button Mapping
     JoystickButton xboxStartButton = new JoystickButton(artillery, Constants.XBOX_Start);
     xboxStartButton.whenPressed(m_changetoLaunchCommand);
@@ -90,6 +91,7 @@ public class RobotContainer {
     //Xbox Right Joystick Click Button Mapping
     JoystickButton xboxRightJoystickClick = new JoystickButton(artillery, Constants.XBOX_RStickButton);
     xboxRightJoystickClick.whenPressed(m_changetoWheelOfFortuneCommand);
+    */
   }
 
 

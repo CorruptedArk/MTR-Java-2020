@@ -7,7 +7,7 @@ import frc.robot.Constants;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.DigitalInput;
 
-
+/*
 public class ChangeModeToLaunchCommand extends CommandBase{
 
     private static final Talon tiltTalon = new Talon(Constants.TILT_MOTOR_ID);
@@ -48,3 +48,5 @@ public class ChangeModeToLaunchCommand extends CommandBase{
     return finished;
     }
 }
+
+*/
