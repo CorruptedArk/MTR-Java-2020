@@ -29,8 +29,8 @@ import edu.wpi.first.wpilibj.XboxController;
 
 
     // Motor IDs are here for drive. //
-    public static final int RIGHT_MOTOR_ID = 0;
-    public static final int LEFT_MOTOR_ID = 1;
+    public static final int RIGHT_MOTOR_ID = 9;
+    public static final int LEFT_MOTOR_ID = 8;
 
     // Fly wheel IDs are here.//
     public static final int LEFT_FLY_WHEEL_MOTOR_ID = 2;

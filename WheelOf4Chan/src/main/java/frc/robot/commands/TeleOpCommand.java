@@ -54,6 +54,7 @@ public class TeleOpCommand extends CommandBase {
 
     if(topSwitch.get()){
       RobotContainer.lastModeID = Constants.LAUNCH_MODE_ID;
+      
     }
     if(middleSwitch.get()){
       RobotContainer.lastModeID = Constants.WHEEL_OF_FORTUNE_MODE_ID;
