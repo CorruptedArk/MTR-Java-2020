@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.*;
 import frc.robot.commands.TeleOpCommand;
+import frc.robot.subsystems.CameraSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.LauncherSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -31,6 +32,7 @@ public class RobotContainer {
   public final ButtonYCommand m_buttonYCommand = new ButtonYCommand();
   public final ButtonACommand m_buttonACommand = new ButtonACommand();
   public final ButtonBCommand m_buttonBCommand = new ButtonBCommand();
+  public final static CameraSubsystem m_cameraSubsystem = new CameraSubsystem();
   //public final ChangeModeToLaunchCommand m_changetoLaunchCommand = new ChangeModeToLaunchCommand();
   //public final ChangeModeToWheelOfFortuneCommand m_changetoWheelOfFortuneCommand = new ChangeModeToWheelOfFortuneCommand();
   //public final ChangeModeToIntakeCommand m_changetoIntakeCommand = new ChangeModeToIntakeCommand();
