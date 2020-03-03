@@ -11,14 +11,19 @@ public class CameraSubsystem extends SubsystemBase {
     private static CameraServer cameraServer;
     private static UsbCamera robotCamera;
     private static VideoSink frames;
+        
 
 public void initCamera() {
     robotCamera = cameraServer.startAutomaticCapture(Constants.CAMERA_ID);
     frames = cameraServer.getServer();
 }
 
+public void setUpCameraSource() {
+frames.setSource(robotCamera);
+}
+
 @Override
-public void periodic () {
+public void periodic() {
 
     }
 }
