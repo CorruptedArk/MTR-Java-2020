@@ -13,17 +13,17 @@ public class CameraSubsystem extends SubsystemBase {
     private static VideoSink frames;
         
 
-public void initCamera() {
-    robotCamera = cameraServer.startAutomaticCapture(Constants.CAMERA_ID);
-    frames = cameraServer.getServer();
-}
+    public void initCamera() {
+        robotCamera = cameraServer.startAutomaticCapture(Constants.CAMERA_ID);
+        frames = cameraServer.getServer();
+    }
 
-public void setUpCameraSource() {
-frames.setSource(robotCamera);
-}
+    public void setUpCameraSource() {
+    frames.setSource(robotCamera);
+    }
 
-@Override
-public void periodic() {
+    @Override
+    public void periodic() {
 
     }
 }

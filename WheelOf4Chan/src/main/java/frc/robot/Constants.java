@@ -60,13 +60,13 @@ import edu.wpi.first.wpilibj.XboxController;
     public static final int ARTILLERY_ID = 1;
 
     // Constants for the Axis on the controller.
-    public static final int XBOX_LTrigger = 0;
-    public static final int XBOX_RTrigger = 1;
-    public static final int XBOX_LStickXAxis = 2; 
-    public static final int XBOX_LStickYAxis = 3;
-    public static final int XBOX_RStickXAxis = 4;
-    public static final int XBOX_RStickYAxis = 5;
-    public static final int XBOX_dPad_Axis = 6;
+    public static final int LEFT_X_AXIS = 0;
+    public static final int LEFT_Y_AXIS = 1;
+    public static final int LEFT_TRIGGER_AXIS = 2;
+    public static final int RIGHT_TRIGGER_AXIS = 3;
+    public static final int RIGHT_X_AXIS = 4;
+    public static final int RIGHT_Y_AXIS = 5;
+    public static final int D_PAD = 6;
 
     //Variables for Xbox Controller buttons
     public static final int XBOX_A = XboxController.Button.kA.value;

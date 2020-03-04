@@ -27,7 +27,7 @@ public class RobotContainer {
  
 
   private final TeleOpCommand m_teleOpCommand = new TeleOpCommand();
-  public final AutonCommand m_autonCommand = new AutonCommand();
+  private final AutonCommand m_autonCommand = new AutonCommand();
   public final ButtonXCommand m_buttonXCommand = new ButtonXCommand();
   public final ButtonYCommand m_buttonYCommand = new ButtonYCommand();
   public final ButtonACommand m_buttonACommand = new ButtonACommand();
@@ -133,5 +133,13 @@ public class RobotContainer {
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
     return m_autonCommand;
+  }
+/**
+   * Use this to pass the TeleOp command to the main {@link Robot} class.
+   *
+   * @return the command to run in TeleOp
+   */
+  public Command getTeleOpCommand() {
+    return m_teleOpCommand;
   }
 }

@@ -24,10 +24,10 @@ public class TeleOpCommand extends CommandBase {
    * 
    * 
    */
-  private static final DigitalInput topSwitch = new DigitalInput(Constants.TOP_TIER_LIMIT_SWITCH_ID);
-  private static final DigitalInput middleSwitch = new DigitalInput(Constants.MIDDLE_LIMIT_SWITCH_ID);
-  private static final DigitalInput bottomSwitch = new DigitalInput(Constants.BOTTOM_LIMIT_SWITCH_ID);
-  private static final Talon tiltTalon = new Talon(Constants.TILT_MOTOR_ID);
+  //private static final DigitalInput topSwitch = new DigitalInput(Constants.TOP_TIER_LIMIT_SWITCH_ID);
+  //private static final DigitalInput middleSwitch = new DigitalInput(Constants.MIDDLE_LIMIT_SWITCH_ID);
+  //private static final DigitalInput bottomSwitch = new DigitalInput(Constants.BOTTOM_LIMIT_SWITCH_ID);
+  //private static final Talon tiltTalon = new Talon(Constants.TILT_MOTOR_ID);
   public TeleOpCommand() {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(RobotContainer.m_launcherSubsystem);
@@ -44,25 +44,22 @@ public class TeleOpCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    DriveSubsystem driveSub = new DriveSubsystem();
-    LauncherSubsystem launcherSub = new LauncherSubsystem();
+    double rightSpeed = RobotContainer.Buffer(Constants.RIGHT_Y_AXIS, RobotContainer.pilot, true, RobotContainer.ZERO_MARGIN, -RobotContainer.ZERO_MARGIN, RobotContainer.driveScale);
+    double leftSpeed = RobotContainer.Buffer(Constants.LEFT_Y_AXIS, RobotContainer.pilot, true, RobotContainer.ZERO_MARGIN, -RobotContainer.ZERO_MARGIN,RobotContainer.driveScale);
     
+    RobotContainer.m_driveSubsystem.drive(leftSpeed, rightSpeed);
 
-    
-    driveSub.drive(RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, false, 0.0, 0.0, RobotContainer.driveScale),
-      RobotContainer.Buffer(Constants.XBOX_LStickYAxis, RobotContainer.pilot, true, 0.0, 0.0, RobotContainer.driveScale));
-
-    if(topSwitch.get()){
-      RobotContainer.lastModeID = Constants.LAUNCH_MODE_ID;
+    //if(topSwitch.get()){
+      //RobotContainer.lastModeID = Constants.LAUNCH_MODE_ID;
       
-    }
-    if(middleSwitch.get()){
-      RobotContainer.lastModeID = Constants.WHEEL_OF_FORTUNE_MODE_ID;
-    }
-    if(bottomSwitch.get()){
-      RobotContainer.lastModeID = Constants.INTAKE_MODE_ID;
-    }
-
+    //}
+    //if(middleSwitch.get()){
+      //RobotContainer.lastModeID = Constants.WHEEL_OF_FORTUNE_MODE_ID;
+    //}
+    //if(bottomSwitch.get()){
+      //RobotContainer.lastModeID = Constants.INTAKE_MODE_ID;
+    //}
+/*
     switch(RobotContainer.modeID)
     {
       case Constants.LAUNCH_MODE_ID:
@@ -94,7 +91,7 @@ public class TeleOpCommand extends CommandBase {
           tiltTalon.set(-Constants.tiltSpeed);
         }
       break;
-    }
+    }*/
   }
 
   // Called once the command ends or is interrupted.
