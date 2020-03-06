@@ -32,6 +32,8 @@ public class RobotContainer {
   public final ButtonYCommand m_buttonYCommand = new ButtonYCommand();
   public final ButtonACommand m_buttonACommand = new ButtonACommand();
   public final ButtonBCommand m_buttonBCommand = new ButtonBCommand();
+  public final ScaleUpCommand m_ScaleUpCommand = new ScaleUpCommand();
+  public final ScaleDownCommand m_ScaleDownCommand = new ScaleDownCommand();
   private final static CameraSubsystem m_cameraSubsystem = new CameraSubsystem();
   //public final ChangeModeToLaunchCommand m_changetoLaunchCommand = new ChangeModeToLaunchCommand();
   //public final ChangeModeToWheelOfFortuneCommand m_changetoWheelOfFortuneCommand = new ChangeModeToWheelOfFortuneCommand();
@@ -83,6 +85,12 @@ public class RobotContainer {
     //Xbox Y Button Mapping
     JoystickButton xboxYButton = new JoystickButton(artillery, Constants.XBOX_Y);
     xboxYButton.whenPressed(m_buttonYCommand);
+    //Xbox Left Bumper Button Mapping
+    JoystickButton scaleUpButton = new JoystickButton(pilot, Constants.XBOX_LBumper);
+    scaleUpButton.whenPressed(m_ScaleUpCommand);
+    //Xbox Right Bumper Button Mapping
+    JoystickButton scaleDownButton = new JoystickButton(pilot, Constants.XBOX_RBumper);
+    scaleDownButton.whenPressed(m_ScaleDownCommand);
     /*
     //Xbox Start Button Mapping
     JoystickButton xboxStartButton = new JoystickButton(artillery, Constants.XBOX_Start);
@@ -94,6 +102,21 @@ public class RobotContainer {
     JoystickButton xboxRightJoystickClick = new JoystickButton(artillery, Constants.XBOX_RStickButton);
     xboxRightJoystickClick.whenPressed(m_changetoWheelOfFortuneCommand);
     */
+  }
+
+
+  public static double getDriveScale(){
+  return driveScale;  
+  }
+  public static void addDriveScale(){
+    if(driveScale < Constants.SCALE_MAX + Constants.SCALE_INTERVAL){
+      driveScale = driveScale + Constants.SCALE_INTERVAL;
+    }
+  }
+  public static void lowerDriveScale(){
+    if(driveScale > Constants.SCALE_INTERVAL + Constants.SCALE_INTERVAL){
+      driveScale = driveScale - Constants.SCALE_INTERVAL;
+    }
   }
 
 

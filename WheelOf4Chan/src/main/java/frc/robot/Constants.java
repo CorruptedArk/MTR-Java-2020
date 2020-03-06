@@ -17,10 +17,11 @@ import edu.wpi.first.wpilibj.XboxController;
  * constants are needed, to reduce verbosity.
  */
     public final class Constants {
-
+    public static final double SCALE_MAX = 1;
+    public static final double SCALE_INTERVAL = 0.1;
 
     // Variable for the speed of the tilt of the arm of the robot.
-    public static final double tiltSpeed = .75;
+    public static final double TILT_SPEED = .75;
 
     
     public static final int INTAKE_MODE_ID = 0;
