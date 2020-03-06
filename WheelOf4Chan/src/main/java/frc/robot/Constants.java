@@ -52,7 +52,8 @@ import edu.wpi.first.wpilibj.XboxController;
     public static final int COLOR_SENSOR_ID = 0;
 
     // Camera ID //
-    public static final int CAMERA_ID = 0;
+    public static final int CAMERA_ID_1 = 0;
+    public static final int CAMERA_ID_2 = 1;
 
 
     // Driver IDs are here. //

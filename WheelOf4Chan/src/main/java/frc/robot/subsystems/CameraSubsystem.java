@@ -9,19 +9,21 @@ import edu.wpi.cscore.VideoSink;
 public class CameraSubsystem extends SubsystemBase {
 
     private static CameraServer cameraServer;
-    private static UsbCamera robotCamera;
+    private static UsbCamera robotCamera1;
+    private static UsbCamera robotCamera2;
     private static VideoSink frames;
         
 
-    public void initCamera() {
-        robotCamera = cameraServer.startAutomaticCapture(Constants.CAMERA_ID);
+    public void initCameras() {
+        robotCamera1 = cameraServer.startAutomaticCapture(Constants.CAMERA_ID_1);
+        robotCamera2 = cameraServer.startAutomaticCapture(Constants.CAMERA_ID_2);
         frames = cameraServer.getServer();
     }
 
-    public void setUpCameraSource() {
-    frames.setSource(robotCamera);
+    /*public void setUpCameraSource() {
+        frames.setSource(robotCamera1);
     }
-
+    */
     @Override
     public void periodic() {
 

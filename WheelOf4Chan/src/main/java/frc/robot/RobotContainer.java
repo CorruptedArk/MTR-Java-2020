@@ -32,7 +32,7 @@ public class RobotContainer {
   public final ButtonYCommand m_buttonYCommand = new ButtonYCommand();
   public final ButtonACommand m_buttonACommand = new ButtonACommand();
   public final ButtonBCommand m_buttonBCommand = new ButtonBCommand();
-  public final static CameraSubsystem m_cameraSubsystem = new CameraSubsystem();
+  private final static CameraSubsystem m_cameraSubsystem = new CameraSubsystem();
   //public final ChangeModeToLaunchCommand m_changetoLaunchCommand = new ChangeModeToLaunchCommand();
   //public final ChangeModeToWheelOfFortuneCommand m_changetoWheelOfFortuneCommand = new ChangeModeToWheelOfFortuneCommand();
   //public final ChangeModeToIntakeCommand m_changetoIntakeCommand = new ChangeModeToIntakeCommand();
@@ -142,4 +142,9 @@ public class RobotContainer {
   public Command getTeleOpCommand() {
     return m_teleOpCommand;
   }
+  
+  public CameraSubsystem getCameraSubsystem(){
+    return m_cameraSubsystem;
+  }
 }
+
