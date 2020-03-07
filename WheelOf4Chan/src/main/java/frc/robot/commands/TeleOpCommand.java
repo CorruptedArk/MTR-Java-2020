@@ -44,8 +44,8 @@ public class TeleOpCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double rightSpeed = RobotContainer.Buffer(Constants.RIGHT_Y_AXIS, RobotContainer.pilot, true, RobotContainer.ZERO_MARGIN, -RobotContainer.ZERO_MARGIN, RobotContainer.driveScale);
-    double leftSpeed = RobotContainer.Buffer(Constants.LEFT_Y_AXIS, RobotContainer.pilot, true, RobotContainer.ZERO_MARGIN, -RobotContainer.ZERO_MARGIN,RobotContainer.driveScale);
+    double rightSpeed = RobotContainer.Buffer(Constants.RIGHT_Y_AXIS, RobotContainer.pilot, true, RobotContainer.ZERO_MARGIN, -RobotContainer.ZERO_MARGIN, RobotContainer.getDriveScale());
+    double leftSpeed = RobotContainer.Buffer(Constants.LEFT_Y_AXIS, RobotContainer.pilot, true, RobotContainer.ZERO_MARGIN, -RobotContainer.ZERO_MARGIN,RobotContainer.getDriveScale());
     
     RobotContainer.m_driveSubsystem.drive(leftSpeed, rightSpeed);
 
