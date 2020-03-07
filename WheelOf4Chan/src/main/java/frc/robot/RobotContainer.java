@@ -51,7 +51,7 @@ public class RobotContainer {
   
   //check old 2019 code for info.
   public static final double ZERO_MARGIN = 0.18;
-  public static volatile double driveScale = 0.5;
+  private static volatile double driveScale = 0.5;
   public static final double DRIVE_STEP_VAL = 0.1;
 
   /**
@@ -104,11 +104,11 @@ public class RobotContainer {
     */
   }
 
-
+  // driveScale indirect calls
   public static double getDriveScale(){
   return driveScale;  
   }
-  public static void addDriveScale(){
+  public static void raiseDriveScale(){
     if(driveScale < Constants.SCALE_MAX + Constants.SCALE_INTERVAL){
       driveScale = driveScale + Constants.SCALE_INTERVAL;
     }

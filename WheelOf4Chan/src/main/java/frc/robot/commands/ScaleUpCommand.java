@@ -10,7 +10,7 @@ public class ScaleUpCommand extends CommandBase{
 
     }   
     public void execute(){
-        RobotContainer.addDriveScale();
+        RobotContainer.raiseDriveScale();
         finished = true;
     }
     public void initialize(){
