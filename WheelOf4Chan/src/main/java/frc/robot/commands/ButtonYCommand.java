@@ -8,7 +8,7 @@ public class ButtonYCommand extends CommandBase
 
     public ButtonYCommand(){
 
-        addRequirements(RobotContainer.m_launcherSubsystem);
+        //addRequirements(RobotContainer.m_launcherSubsystem);
     {
 
       }

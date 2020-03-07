@@ -30,7 +30,7 @@ public class TeleOpCommand extends CommandBase {
   //private static final Talon tiltTalon = new Talon(Constants.TILT_MOTOR_ID);
   public TeleOpCommand() {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(RobotContainer.m_launcherSubsystem);
+    //addRequirements(RobotContainer.m_launcherSubsystem);
     addRequirements(RobotContainer.m_driveSubsystem);
   }
 

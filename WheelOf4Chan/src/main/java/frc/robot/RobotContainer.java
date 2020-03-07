@@ -12,6 +12,7 @@ import frc.robot.commands.*;
 import frc.robot.commands.TeleOpCommand;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.LauncherSubsystem;
+import frc.robot.subsystems.WheelOfFortuneSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
@@ -33,11 +34,12 @@ public class RobotContainer {
   public final ButtonBCommand m_buttonBCommand = new ButtonBCommand();
   public final ScaleUpCommand m_ScaleUpCommand = new ScaleUpCommand();
   public final ScaleDownCommand m_ScaleDownCommand = new ScaleDownCommand();
+  public final WheelOfFortuneSubsystem m_wheelOfFortuneSubsystem = new WheelOfFortuneSubsystem();
   //public final ChangeModeToLaunchCommand m_changetoLaunchCommand = new ChangeModeToLaunchCommand();
   //public final ChangeModeToWheelOfFortuneCommand m_changetoWheelOfFortuneCommand = new ChangeModeToWheelOfFortuneCommand();
   //public final ChangeModeToIntakeCommand m_changetoIntakeCommand = new ChangeModeToIntakeCommand();
   public final static DriveSubsystem m_driveSubsystem = new DriveSubsystem();
-  public final static LauncherSubsystem m_launcherSubsystem = new LauncherSubsystem();
+  //public final static LauncherSubsystem m_launcherSubsystem = new LauncherSubsystem();
   
   
   public static final Joystick pilot = new Joystick(Constants.PILOT_ID);

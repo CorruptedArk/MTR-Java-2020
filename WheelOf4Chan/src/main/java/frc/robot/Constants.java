@@ -22,42 +22,47 @@ import edu.wpi.first.wpilibj.XboxController;
 
     // Variable for the speed of the tilt of the arm of the robot.
     public static final double TILT_SPEED = .75;
-
     
     public static final int INTAKE_MODE_ID = 0;
     public static final int LAUNCH_MODE_ID = 1;
     public static final int WHEEL_OF_FORTUNE_MODE_ID = 2;
 
 
-    // Motor IDs are here for drive. //
+    //Wheel colors for the color sensor
+    public static final int WHEEL_RED = 0;
+    public static final int WHEEL_GREEN = 1;
+    public static final int WHEEL_BLUE = 2;
+    
+
+    // Motor IDs are here for drive.
     public static final int RIGHT_MOTOR_ID = 9;
     public static final int LEFT_MOTOR_ID = 8;
 
-    // Fly wheel IDs are here.//
+    // Fly wheel IDs are here
     public static final int LEFT_FLY_WHEEL_MOTOR_ID = 2;
     public static final int RIGHT_FLY_WHEEL_MOTOR_ID = 3;
 
-    // IDs for conveyor belt and arm tilt motors here.//
+    // IDs for conveyor belt and arm tilt motors here.
     public static final int TILT_MOTOR_ID = 4;
     public static final int CONVEYOR_BELT_MOTOR_ID = 5; 
 
-    // Limit Switch IDs go here//
+    // Limit Switch IDs go here.
     public static final int BOTTOM_LIMIT_SWITCH_ID = 0;
     public static final int MIDDLE_LIMIT_SWITCH_ID = 1;
     public static final int TOP_TIER_LIMIT_SWITCH_ID = 2;
 
-    // Servo IDS //
+    // Servo IDS 
     public static final int LOCK_TILT_SERVO_ID = 0;
 
-    // Color Sensor ID // 
+    // Color Sensor ID 
     public static final int COLOR_SENSOR_ID = 0;
 
-    // Camera ID //
+    // Camera ID
     public static final int CAMERA_ID_1 = 0;
     public static final int CAMERA_ID_2 = 1;
 
 
-    // Driver IDs are here. //
+    // Driver IDs are here. 
     public static final int PILOT_ID = 0;
     public static final int ARTILLERY_ID = 1;
 
@@ -70,7 +75,7 @@ import edu.wpi.first.wpilibj.XboxController;
     public static final int RIGHT_Y_AXIS = 5;
     public static final int D_PAD = 6;
 
-    //Variables for Xbox Controller buttons
+    // Variables for Xbox Controller buttons
     public static final int XBOX_A = XboxController.Button.kA.value;
     public static final int XBOX_B = XboxController.Button.kB.value;
     public static final int XBOX_X = XboxController.Button.kX.value;

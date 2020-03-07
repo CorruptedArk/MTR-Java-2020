@@ -20,7 +20,7 @@ public class AutonCommand extends CommandBase {
   public AutonCommand() {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(RobotContainer.m_driveSubsystem);
-    addRequirements(RobotContainer.m_launcherSubsystem);
+    //addRequirements(RobotContainer.m_launcherSubsystem);
 
   }
 

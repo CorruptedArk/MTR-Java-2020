@@ -8,7 +8,7 @@ public class ButtonBCommand extends CommandBase
 
     public ButtonBCommand(){
 
-        addRequirements(RobotContainer.m_launcherSubsystem);
+        //addRequirements(RobotContainer.m_launcherSubsystem);
     {
 
       }
