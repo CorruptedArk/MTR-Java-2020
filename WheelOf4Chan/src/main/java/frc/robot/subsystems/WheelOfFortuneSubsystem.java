@@ -21,11 +21,11 @@ public class WheelOfFortuneSubsystem extends SubsystemBase {
 
 
   /**
-   * Creates a new ColorSensorSubsystem.
+   * Creates a new WheelOfFortuneSubsystem.
    */
-  //ColorSubsystem Constuctor//
+  // WheelOfFortuneSubsystem Constuctor
   public WheelOfFortuneSubsystem() { 
-    // The use of the left fly wheel ID is temporary
+    // The use of the left fly wheel ID is temporary until the robot is the design we originally planned on it being.
     flyWheelMotor = new Talon(Constants.LEFT_FLY_WHEEL_MOTOR_ID);
     
   }
@@ -34,8 +34,13 @@ public class WheelOfFortuneSubsystem extends SubsystemBase {
     return m_colorSensor.getColor();
   }
 
-  public void turnWheelToBlue(){
+  public void turnWheel() {
+    flyWheelMotor.setSpeed(Constants.FLY_WHEEL_SPEED);
 
+  }
+
+  public void stopWheel() {
+    flyWheelMotor.setSpeed(0);
   }
   
   @Override

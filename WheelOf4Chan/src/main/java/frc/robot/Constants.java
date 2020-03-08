@@ -6,7 +6,10 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
+
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.util.Color;
+import edu.wpi.first.wpilibj.util.Color8Bit;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
@@ -21,7 +24,10 @@ import edu.wpi.first.wpilibj.XboxController;
     public static final double SCALE_INTERVAL = 0.1;
 
     // Variable for the speed of the tilt of the arm of the robot.
-    public static final double TILT_SPEED = .75;
+    public static final double TILT_SPEED = 0.75;
+
+    // Fly Wheel Speed
+    public static final double FLY_WHEEL_SPEED = 0.5;
     
     public static final int INTAKE_MODE_ID = 0;
     public static final int LAUNCH_MODE_ID = 1;
@@ -29,9 +35,10 @@ import edu.wpi.first.wpilibj.XboxController;
 
 
     //Wheel colors for the color sensor
-    public static final int WHEEL_RED = 0;
-    public static final int WHEEL_GREEN = 1;
-    public static final int WHEEL_BLUE = 2;
+    public static final Color WHEEL_RED = new Color(new Color8Bit(255, 0, 0));
+    public static final Color WHEEL_GREEN = new Color(new Color8Bit(0, 255, 0));
+    public static final Color WHEEL_BLUE = new Color(new Color8Bit(0, 255, 255));
+    public static final Color WHEEL_YELLOW = new Color(new Color8Bit(255, 255, 0));
     
 
     // Motor IDs are here for drive.

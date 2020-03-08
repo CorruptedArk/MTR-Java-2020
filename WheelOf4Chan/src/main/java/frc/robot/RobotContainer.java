@@ -34,7 +34,8 @@ public class RobotContainer {
   public final ButtonBCommand m_buttonBCommand = new ButtonBCommand();
   public final ScaleUpCommand m_ScaleUpCommand = new ScaleUpCommand();
   public final ScaleDownCommand m_ScaleDownCommand = new ScaleDownCommand();
-  public final WheelOfFortuneSubsystem m_wheelOfFortuneSubsystem = new WheelOfFortuneSubsystem();
+  public final static WheelOfFortuneSubsystem m_wheelOfFortuneSubsystem = new WheelOfFortuneSubsystem();
+  private final GoToGivenColorCommand m_goToGivenColorCommand = new GoToGivenColorCommand();
   //public final ChangeModeToLaunchCommand m_changetoLaunchCommand = new ChangeModeToLaunchCommand();
   //public final ChangeModeToWheelOfFortuneCommand m_changetoWheelOfFortuneCommand = new ChangeModeToWheelOfFortuneCommand();
   //public final ChangeModeToIntakeCommand m_changetoIntakeCommand = new ChangeModeToIntakeCommand();
@@ -74,7 +75,7 @@ public class RobotContainer {
   private void configureButtonBindings() {
 
     //Xbox A Button Mapping
-    JoystickButton xboxAButton = new JoystickButton(artillery, Constants.XBOX_A);
+   /* JoystickButton xboxAButton = new JoystickButton(artillery, Constants.XBOX_A);
     xboxAButton.whenPressed(m_buttonACommand);
     //Xbox B Button Mapping
     JoystickButton xboxBButton = new JoystickButton(artillery, Constants.XBOX_B);
@@ -84,13 +85,15 @@ public class RobotContainer {
     xboxXButton.whenPressed(m_buttonXCommand);
     //Xbox Y Button Mapping
     JoystickButton xboxYButton = new JoystickButton(artillery, Constants.XBOX_Y);
-    xboxYButton.whenPressed(m_buttonYCommand);
+    xboxYButton.whenPressed(m_buttonYCommand);*/
     //Xbox Left Bumper Button Mapping
     JoystickButton scaleUpButton = new JoystickButton(pilot, Constants.XBOX_LBumper);
     scaleUpButton.whenPressed(m_ScaleUpCommand);
     //Xbox Right Bumper Button Mapping
     JoystickButton scaleDownButton = new JoystickButton(pilot, Constants.XBOX_RBumper);
     scaleDownButton.whenPressed(m_ScaleDownCommand);
+    JoystickButton activateColorSearchButton = new JoystickButton(artillery, Constants.XBOX_A);
+    activateColorSearchButton.whenPressed(m_goToGivenColorCommand);
     /*
     //Xbox Start Button Mapping
     JoystickButton xboxStartButton = new JoystickButton(artillery, Constants.XBOX_Start);
