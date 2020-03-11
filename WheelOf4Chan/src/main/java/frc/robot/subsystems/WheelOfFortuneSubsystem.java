@@ -1,6 +1,7 @@
 
 package frc.robot.subsystems;
 
+import com.revrobotics.ColorMatch;
 import com.revrobotics.ColorSensorV3;
 import edu.wpi.first.wpilibj.Talon;
 //import edu.wpi.first.wpilibj.Victor;
@@ -18,7 +19,7 @@ public class WheelOfFortuneSubsystem extends SubsystemBase {
   private final I2C.Port i2cPort = I2C.Port.kOnboard;
   private final Talon flyWheelMotor;
   private final ColorSensorV3 m_colorSensor = new ColorSensorV3(i2cPort);
-
+  private final static ColorMatch colormatcher = new ColorMatch();
 
   /**
    * Creates a new WheelOfFortuneSubsystem.
@@ -27,7 +28,10 @@ public class WheelOfFortuneSubsystem extends SubsystemBase {
   public WheelOfFortuneSubsystem() { 
     // The use of the left fly wheel ID is temporary until the robot is the design we originally planned on it being.
     flyWheelMotor = new Talon(Constants.LEFT_FLY_WHEEL_MOTOR_ID);
-    
+  
+  }
+  public ColorMatch getColorMatcher(){
+    return colormatcher;
   }
 
   public Color getColor() {

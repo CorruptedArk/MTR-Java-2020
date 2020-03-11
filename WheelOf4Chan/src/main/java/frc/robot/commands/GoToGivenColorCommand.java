@@ -19,9 +19,12 @@ import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj.I2C;
 import com.revrobotics.ColorSensorV3;
 import edu.wpi.first.wpilibj.Talon;
+import com.revrobotics.ColorMatch;
+import com.revrobotics.ColorMatchResult;
 
 public class GoToGivenColorCommand extends CommandBase {
     private boolean finished;
+    private ColorMatch m_matcher = RobotContainer.m_wheelOfFortuneSubsystem.getColorMatcher();
 
     public GoToGivenColorCommand() {
         addRequirements(RobotContainer.m_wheelOfFortuneSubsystem);
@@ -32,7 +35,11 @@ public class GoToGivenColorCommand extends CommandBase {
     @Override
     public void initialize() {
         finished = false;
-
+        m_matcher.addColorMatch(Constants.WHEEL_BLUE);
+        m_matcher.addColorMatch(Constants.WHEEL_RED);
+        m_matcher.addColorMatch(Constants.WHEEL_GREEN);
+        m_matcher.addColorMatch(Constants.WHEEL_YELLOW);
+        m_matcher.addColorMatch(Constants.WHEEL_WHITE);
     }
 
     // Called every time the scheduler runs while the command is scheduled.
@@ -42,8 +49,8 @@ public class GoToGivenColorCommand extends CommandBase {
         String gameData;
         Color givenColor;
         gameData = DriverStation.getInstance().getGameSpecificMessage();
-        if (gameData.length() > 0) {
-            switch (gameData.charAt(0)) {
+        if (true/*gameData.length() > 0*/) {
+            switch ('Y'/*gameData.charAt(0)*/) {
                 case 'B':
                     // Blue case code
                     givenColor = Constants.WHEEL_BLUE;
@@ -70,8 +77,9 @@ public class GoToGivenColorCommand extends CommandBase {
             // Code for no data received yet
             givenColor = Color.kBlack;
         }
-
-        if (givenColor.equals(RobotContainer.m_wheelOfFortuneSubsystem.getColor())) {
+        
+        ColorMatchResult colorResult = m_matcher.matchClosestColor(RobotContainer.m_wheelOfFortuneSubsystem.getColor());
+        if (givenColor == colorResult.color) {
             RobotContainer.m_wheelOfFortuneSubsystem.stopWheel();
             finished = true;
         } else {

@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import com.revrobotics.ColorMatch;
+
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj.util.Color8Bit;
@@ -35,18 +37,19 @@ import edu.wpi.first.wpilibj.util.Color8Bit;
 
 
     //Wheel colors for the color sensor
-    public static final Color WHEEL_RED = new Color(new Color8Bit(255, 0, 0));
-    public static final Color WHEEL_GREEN = new Color(new Color8Bit(0, 255, 0));
-    public static final Color WHEEL_BLUE = new Color(new Color8Bit(0, 255, 255));
-    public static final Color WHEEL_YELLOW = new Color(new Color8Bit(255, 255, 0));
+    public static final Color WHEEL_RED = ColorMatch.makeColor(0.517, 0.344, 0.131);
+    public static final Color WHEEL_GREEN = ColorMatch.makeColor(0.164, 0.578, 0.258);
+    public static final Color WHEEL_BLUE = ColorMatch.makeColor(0.117, 0.424, 0.459);
+    public static final Color WHEEL_YELLOW = ColorMatch.makeColor(0.316, 0.562, 0.121);
+    public static final Color WHEEL_WHITE = ColorMatch.makeColor(0.260, 0.484, 0.260);
     
 
     // Motor IDs are here for drive.
     public static final int RIGHT_MOTOR_ID = 9;
-    public static final int LEFT_MOTOR_ID = 8;
+    public static final int LEFT_MOTOR_ID = 2;//flipped with leftflywheel
 
     // Fly wheel IDs are here
-    public static final int LEFT_FLY_WHEEL_MOTOR_ID = 2;
+    public static final int LEFT_FLY_WHEEL_MOTOR_ID = 8;
     public static final int RIGHT_FLY_WHEEL_MOTOR_ID = 3;
 
     // IDs for conveyor belt and arm tilt motors here.

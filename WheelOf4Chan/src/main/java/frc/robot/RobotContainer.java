@@ -34,6 +34,7 @@ public class RobotContainer {
   public final ButtonBCommand m_buttonBCommand = new ButtonBCommand();
   public final ScaleUpCommand m_ScaleUpCommand = new ScaleUpCommand();
   public final ScaleDownCommand m_ScaleDownCommand = new ScaleDownCommand();
+  public final RotateWheel3TimesCommand m_RotateWheel3TimesCommand = new RotateWheel3TimesCommand();
   public final static WheelOfFortuneSubsystem m_wheelOfFortuneSubsystem = new WheelOfFortuneSubsystem();
   private final GoToGivenColorCommand m_goToGivenColorCommand = new GoToGivenColorCommand();
   //public final ChangeModeToLaunchCommand m_changetoLaunchCommand = new ChangeModeToLaunchCommand();
@@ -92,8 +93,12 @@ public class RobotContainer {
     //Xbox Right Bumper Button Mapping
     JoystickButton scaleDownButton = new JoystickButton(pilot, Constants.XBOX_RBumper);
     scaleDownButton.whenPressed(m_ScaleDownCommand);
+    //Xbox A Button Mapping
     JoystickButton activateColorSearchButton = new JoystickButton(artillery, Constants.XBOX_A);
     activateColorSearchButton.whenPressed(m_goToGivenColorCommand);
+    //Xbox B Button Mapping
+    JoystickButton rotationButton = new JoystickButton(artillery, Constants.XBOX_B);
+    rotationButton.whenPressed(m_RotateWheel3TimesCommand);
     /*
     //Xbox Start Button Mapping
     JoystickButton xboxStartButton = new JoystickButton(artillery, Constants.XBOX_Start);

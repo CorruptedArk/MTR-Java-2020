@@ -14,7 +14,10 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.Constants;
 import frc.robot.subsystems.LauncherSubsystem;
+import frc.robot.subsystems.WheelOfFortuneSubsystem;
 import frc.robot.RobotContainer;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.subsystems.WheelOfFortuneSubsystem;
 
 
 
@@ -48,6 +51,10 @@ public class TeleOpCommand extends CommandBase {
     double leftSpeed = RobotContainer.Buffer(Constants.LEFT_Y_AXIS, RobotContainer.pilot, true, RobotContainer.ZERO_MARGIN, -RobotContainer.ZERO_MARGIN,RobotContainer.getDriveScale());
     
     RobotContainer.m_driveSubsystem.drive(leftSpeed, rightSpeed);
+    SmartDashboard.putString("ColorSensorColor", RobotContainer.m_wheelOfFortuneSubsystem.getColor().toString());
+    SmartDashboard.putNumber("Red", RobotContainer.m_wheelOfFortuneSubsystem.getColor().red);
+    SmartDashboard.putNumber("Blue", RobotContainer.m_wheelOfFortuneSubsystem.getColor().blue);
+    SmartDashboard.putNumber("Green", RobotContainer.m_wheelOfFortuneSubsystem.getColor().green);
 
     //if(topSwitch.get()){
       //RobotContainer.lastModeID = Constants.LAUNCH_MODE_ID;
