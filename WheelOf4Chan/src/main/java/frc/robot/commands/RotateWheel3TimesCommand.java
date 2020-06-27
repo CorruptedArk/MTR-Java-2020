@@ -8,7 +8,6 @@ import com.revrobotics.*;
 import frc.robot.Constants;
 public class RotateWheel3TimesCommand extends CommandBase{
     private boolean finished;
-    
     private Color baseColor;
     private boolean newColor;
     private int totalRotations;
@@ -20,9 +19,9 @@ public class RotateWheel3TimesCommand extends CommandBase{
     @Override
     public void initialize(){
         finished = false;
-
         newColor = true;
         totalRotations = 0;
+
         m_matcher.addColorMatch(Constants.WHEEL_BLUE);
         m_matcher.addColorMatch(Constants.WHEEL_RED);
         m_matcher.addColorMatch(Constants.WHEEL_GREEN);
@@ -33,32 +32,31 @@ public class RotateWheel3TimesCommand extends CommandBase{
         ColorMatchResult colorResult = m_matcher.matchClosestColor(RobotContainer.m_wheelOfFortuneSubsystem.getColor());
 
         baseColor = colorResult.color;
-
-        RobotContainer.m_wheelOfFortuneSubsystem.turnWheel();
     }
     @Override
     public void execute(){
         
         ColorMatchResult colorResult = m_matcher.matchClosestColor(RobotContainer.m_wheelOfFortuneSubsystem.getColor());
-
+ 
         // Check if the wheel has been rotated 3 times
         if(totalRotations <= 3){
-            
+         RobotContainer.m_wheelOfFortuneSubsystem.turnWheel();
            
-
-            // Has it passed the base color
+            // This checks if the base color of the Wheel of Fortune has been detected seven times.
             if(colorResult.color == baseColor){
                 if(newColor){
                 totalRotations = totalRotations + 1;   
                 }
                 newColor = false;
 
-            }else{
+            }
+            else{
                 newColor = true;
             }
                 
             
         }
+        // This here stops the wheel once it detects the base color the seventh time.
         else{
             RobotContainer.m_wheelOfFortuneSubsystem.stopWheel();
             finished = true;
